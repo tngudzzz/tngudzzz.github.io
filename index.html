@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최수형 | Flutter 앱 개발자 이력서</title>
+  
+  <!-- Pretendard 폰트 -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      word-break: keep-all;
+    }
+    
+    /* 인쇄 최적화 스타일 */
+    @media print {
+      body {
+        background-color: white !important;
+        color: black !important;
+        font-size: 11pt;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-shadow-none {
+        box-shadow: none !important;
+        border: none !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+      .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased py-8 md:py-16 px-4 sm:px-6">
+
+  <!-- 상단 컨트롤러 (웹 전용) -->
+  <div class="max-w-4xl mx-auto mb-6 flex justify-between items-center no-print">
+    <a href="https://github.com/tngudzzz" target="_blank" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-teal-700 transition-colors">
+      <i data-lucide="arrow-left" class="w-4 h-4"></i> GitHub 프로필 방문
+    </a>
+    <div class="flex items-center gap-2">
+      <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-sm font-medium bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 shadow-sm transition-all">
+        <i data-lucide="printer" class="w-4 h-4 text-slate-500"></i>
+        <span>PDF / 인쇄</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 이력서 컨테이너 -->
+  <main class="max-w-4xl mx-auto bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 md:p-14 shadow-sm print-shadow-none">
+
+    <!-- Header Section -->
+    <header class="border-b border-slate-100 pb-8 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">최수형</h1>
+        <p class="text-lg font-semibold text-teal-600">Flutter 앱 개발자</p>
+      </div>
+
+      <!-- 연락처 및 외부 링크 -->
+      <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-sm text-slate-600 mt-3">
+        <a href="mailto:tngudzzzz@naver.com" class="inline-flex items-center gap-1.5 hover:text-teal-600 transition-colors">
+          <i data-lucide="mail" class="w-4 h-4 text-slate-400"></i>
+          <span>tngudzzzz@naver.com</span>
+        </a>
+        <span class="text-slate-300">·</span>
+        <a href="https://github.com/tngudzzz" target="_blank" class="inline-flex items-center gap-1.5 hover:text-teal-600 transition-colors">
+          <i data-lucide="github" class="w-4 h-4 text-slate-400"></i>
+          <span>GitHub</span>
+        </a>
+        <span class="text-slate-300">·</span>
+        <a href="https://app.notion.com/p/Cross-Platform-Engineer-Flutter-ee14ec2a43094b5e84b648c13ca01d8d?source=copy_link" target="_blank" class="inline-flex items-center gap-1.5 hover:text-teal-600 transition-colors font-medium text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded-md">
+          <i data-lucide="file-text" class="w-4 h-4 text-teal-600"></i>
+          <span>상세 포트폴리오 (Notion)</span>
+        </a>
+      </div>
+
+      <!-- 요약 (Summary) -->
+      <div class="mt-5 p-4 rounded-xl bg-slate-50/80 border border-slate-100 text-[15px] leading-relaxed text-slate-700">
+        <p>
+          <strong class="font-semibold text-slate-900">MAU 25만 자연드림 앱</strong>의 Flutter 개발·배포·운영을 3년 반간 전담하며, 
+          웹뷰의 네이티브 앱 전환과 PHP API·Flutter Web 운영 도구를 직접 구축했습니다. 
+          <span class="text-xs text-slate-500 font-normal block sm:inline mt-1 sm:mt-0">(제품 규모: 2026.08 기준)</span>
+        </p>
+      </div>
+    </header>
+
+    <!-- 1. 경력 (Work Experience) -->
+    <section class="mb-10">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-1.5 h-5 bg-teal-500 rounded-full"></div>
+        <h2 class="text-xl font-bold text-slate-900">경력</h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="relative pl-4 border-l-2 border-teal-100">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+            <h3 class="text-base font-bold text-slate-900">자연드림 <span class="text-slate-400 font-normal">·</span> Flutter 앱 개발</h3>
+            <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full w-fit">2023.04 — 현재</span>
+          </div>
+
+          <ul class="space-y-2 text-sm leading-relaxed text-slate-600 list-disc list-outside pl-4">
+            <li>
+              <strong class="text-slate-800">Flutter 개발·배포·운영 1인 전담:</strong> 커뮤니티·푸시 보드는 앱/웹과 PHP API 단독 구축, 장보기·주문·예약·통합 홈은 Backend 협업.
+            </li>
+            <li>
+              <strong class="text-slate-800">운영 효율 극대화:</strong> 홈 중복 로직 단일화 및 고객센터·푸시 운영자용 셀프서비스 어드민 구축으로 개발팀 반복 요청 <strong>100% 해소</strong>.
+            </li>
+            <li>
+              <strong class="text-slate-800">안정성 확보:</strong> DTO·Mapper 분리, 섹션 단위 파싱 실패 격리, 15개 화면 딥 링크 통합, 15개 의존성 스모크 테스트·Sentry로 운영 안정성 확보.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 대표 프로젝트 (Featured Projects) -->
+    <section class="mb-10">
+      <div class="flex items-center gap-2 mb-5">
+        <div class="w-1.5 h-5 bg-teal-500 rounded-full"></div>
+        <h2 class="text-xl font-bold text-slate-900">대표 프로젝트</h2>
+      </div>
+
+      <div class="space-y-6">
+
+        <!-- 프로젝트 1: 푸시 보드 -->
+        <article class="p-5 rounded-xl border border-slate-200/90 hover:border-teal-200 transition-colors bg-white">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <div>
+              <h3 class="text-base font-bold text-slate-900 inline">푸시 보드</h3>
+              <span class="text-sm font-medium text-slate-500">· 반복적인 식별자 추출 요청 해소</span>
+            </div>
+            <span class="text-xs text-slate-400 font-medium">2025.08 — 현재 · 운영 중</span>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Flutter Web</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Riverpod</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">PHP</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">MySQL</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">FingerPush</span>
+          </div>
+
+          <ul class="space-y-1.5 text-sm text-slate-600 list-disc list-outside pl-4 leading-relaxed mb-3">
+            <li>타겟 발송 어드민을 선제 제안하고 기획·UX·Flutter Web·PHP API·배포까지 단독 구축했습니다.</li>
+            <li>운영자 직접 조회·발송 전환으로 개발팀 식별자 추출 요청을 <strong class="text-teal-700 font-semibold">100% 해소(0건)</strong>하고 업무 도구를 축소(3개 → 2개)했습니다.</li>
+            <li>대량 CSV 청크 처리(UI 멈춤 방지)·500건 배치 전송·단계별 부분 실패 구분·30분 TTL 중복 요청 제한을 구현했습니다.</li>
+            <li><strong class="text-slate-800">운영 규모:</strong> 2026.08 기준 <strong>월 약 500만 건</strong> 발송 처리.</li>
+          </ul>
+
+          <div class="pt-2 border-t border-slate-100">
+            <a href="https://app.notion.com/p/Cross-Platform-Engineer-Flutter-ee14ec2a43094b5e84b648c13ca01d8d?source=copy_link" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-teal-600 hover:text-teal-700">
+              푸시 보드 상세 보기 (Notion) <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 프로젝트 2: 통합 홈·큐레이션 -->
+        <article class="p-5 rounded-xl border border-slate-200/90 hover:border-teal-200 transition-colors bg-white">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <div>
+              <h3 class="text-base font-bold text-slate-900 inline">통합 홈·큐레이션</h3>
+              <span class="text-sm font-medium text-slate-500">· 홈별 중복 로직 정리</span>
+            </div>
+            <span class="text-xs text-slate-400 font-medium">2026.07 — 2026.08 · 개편 완료</span>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Flutter</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Riverpod</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">Freezed</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">Retrofit</span>
+          </div>
+
+          <ul class="space-y-1.5 text-sm text-slate-600 list-disc list-outside pl-4 leading-relaxed mb-3">
+            <li>Backend와 협업해 3개 홈(포털·장보기·케어)과 컬렉션의 14개 콘텐츠 타입을 단일 파이프라인(DTO → Section → Builder)으로 통합했습니다.</li>
+            <li>응답 변환과 위젯 빌더를 분리하고, 섹션 단위 파싱 실패를 격리해 일부 데이터 오류 시에도 정상 섹션을 안전하게 노출합니다.</li>
+            <li>앱 재배포 없이 서버 응답만으로 섹션 노출 순서·구성·배경색을 동적 조정합니다.</li>
+          </ul>
+
+          <div class="pt-2 border-t border-slate-100">
+            <a href="https://app.notion.com/p/Cross-Platform-Engineer-Flutter-ee14ec2a43094b5e84b648c13ca01d8d?source=copy_link" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-teal-600 hover:text-teal-700">
+              통합 홈 상세 보기 (Notion) <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 프로젝트 3: 커뮤니티 -->
+        <article class="p-5 rounded-xl border border-slate-200/90 hover:border-teal-200 transition-colors bg-white">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <div>
+              <h3 class="text-base font-bold text-slate-900 inline">커뮤니티</h3>
+              <span class="text-sm font-medium text-slate-500">· 작성부터 콘텐츠 관리까지 앱·API 단독 구축</span>
+            </div>
+            <span class="text-xs text-slate-400 font-medium">2024.12 — 현재 · 운영 중</span>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Flutter</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Riverpod</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">PHP</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">MySQL</span>
+          </div>
+
+          <ul class="space-y-1.5 text-sm text-slate-600 list-disc list-outside pl-4 leading-relaxed mb-3">
+            <li>웹뷰 기반 소통 기능을 네이티브 Flutter 앱과 자체 PHP API로 단독 전환해 반응성과 작성 편의성을 개선했습니다.</li>
+            <li>Riverpod 목록↔상세 즉시 동기화, 이미지 압축·고아 파일 정리, 스토어 심사 대응 신고·차단·필터링을 구현했습니다.</li>
+            <li><strong class="text-slate-800">운영 성과:</strong> 2026.08 기준 누적 게시글 <strong>3.4만 건 이상</strong> · 전체 게시글 중 <strong>앱 작성 비중 70%</strong> 달성.</li>
+          </ul>
+
+          <div class="pt-2 border-t border-slate-100">
+            <a href="https://app.notion.com/p/Cross-Platform-Engineer-Flutter-ee14ec2a43094b5e84b648c13ca01d8d?source=copy_link" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-teal-600 hover:text-teal-700">
+              커뮤니티 상세 보기 (Notion) <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 3. 기술 스택 (Skills) -->
+    <section class="mb-10">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-1.5 h-5 bg-teal-500 rounded-full"></div>
+        <h2 class="text-xl font-bold text-slate-900">기술 스택</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="font-bold text-slate-900 block mb-1.5 flex items-center gap-1.5">
+            <i data-lucide="layers" class="w-4 h-4 text-teal-600"></i> 주력 기술
+          </span>
+          <p class="text-slate-600 leading-relaxed">
+            <strong class="text-slate-800">Flutter·Dart, Riverpod, Dio·Retrofit, GoRouter</strong><br>
+            <span class="text-xs text-slate-500">화면 상태·API 연동·라우팅 설계</span>
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="font-bold text-slate-900 block mb-1.5 flex items-center gap-1.5">
+            <i data-lucide="server" class="w-4 h-4 text-teal-600"></i> 업무 스택
+          </span>
+          <p class="text-slate-600 leading-relaxed">
+            <strong class="text-slate-800">PHP·MySQL, Flutter Web, WebView</strong><br>
+            <span class="text-xs text-slate-500">App Links·Universal Links, Sentry</span>
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="font-bold text-slate-900 block mb-1.5 flex items-center gap-1.5">
+            <i data-lucide="box" class="w-4 h-4 text-teal-600"></i> 개인 개발 & 인프라
+          </span>
+          <p class="text-slate-600 leading-relaxed">
+            <strong class="text-slate-800">Firebase, R2, Drift, WidgetKit·Glance</strong><br>
+            <span class="text-xs text-slate-500">GetX·Hive·Fastlane (일정관리 앱 배포)</span>
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="font-bold text-slate-900 block mb-1.5 flex items-center gap-1.5">
+            <i data-lucide="users" class="w-4 h-4 text-teal-600"></i> 협업 도구
+          </span>
+          <p class="text-slate-600 leading-relaxed">
+            <strong class="text-slate-800">Git, Figma, Notion, Slack</strong><br>
+            <span class="text-xs text-slate-500">Backend 협업, 고객센터 요구사항 인터뷰</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 추가 업무 경험 (Additional Experience) -->
+    <section class="mb-10">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-1.5 h-5 bg-teal-500 rounded-full"></div>
+        <h2 class="text-xl font-bold text-slate-900">추가 업무 경험</h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="p-4 rounded-xl border border-slate-100 bg-slate-50/50">
+          <div class="flex items-baseline justify-between mb-1.5">
+            <h3 class="text-sm font-bold text-slate-900">장보기·주문 관리</h3>
+            <div class="flex gap-2 text-xs font-medium text-teal-600">
+              <a href="https://app.notion.com/p/Cross-Platform-Engineer-Flutter-ee14ec2a43094b5e84b648c13ca01d8d?source=copy_link" target="_blank" class="hover:underline">장보기 상세</a>
+              <span class="text-slate-300">·</span>
+              <a href="https://app.notion.com/p/Cross-Platform-Engineer-Flutter-ee14ec2a43094b5e84b648c13ca01d8d?source=copy_link" target="_blank" class="hover:underline">주문 관리 상세</a>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            전체 화면을 다시 불러오던 웹뷰 대신 해당 상품만 국소 갱신(스크롤 유지)하도록 상품 5천 개(일 3만 명) 탐색·담기 동기화 및 다중 배송 주문·취소를 구현했습니다.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-100 bg-slate-50/50">
+          <div class="flex items-baseline justify-between mb-1.5">
+            <h3 class="text-sm font-bold text-slate-900">딥 링크·SDK 전환</h3>
+            <div class="flex gap-2 text-xs font-medium text-teal-600">
+              <a href="https://app.notion.com/p/Cross-Platform-Engineer-Flutter-ee14ec2a43094b5e84b648c13ca01d8d?source=copy_link" target="_blank" class="hover:underline">딥 링크 상세</a>
+              <span class="text-slate-300">·</span>
+              <a href="https://app.notion.com/p/Cross-Platform-Engineer-Flutter-ee14ec2a43094b5e84b648c13ca01d8d?source=copy_link" target="_blank" class="hover:underline">SDK 전환 상세</a>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            15개 화면의 링크·로그인 복원 규칙을 통합하고, SDK 전환용 15개 의존성 검증 화면과 스모크 테스트를 구축했습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 개인 프로젝트 (Personal Projects) -->
+    <section class="mb-10">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-1.5 h-5 bg-teal-500 rounded-full"></div>
+        <h2 class="text-xl font-bold text-slate-900">개인 프로젝트</h2>
+      </div>
+
+      <div class="space-y-5">
+        <!-- Hal-Me -->
+        <div class="p-5 rounded-xl border border-slate-200/90 bg-white">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <div>
+              <h3 class="text-base font-bold text-slate-900 inline">Hal-Me</h3>
+              <span class="text-sm font-medium text-slate-500">· AI 협업으로 개발하는 비공개 가족 사진 앱</span>
+            </div>
+            <span class="text-xs text-slate-400 font-medium">2026.09 — 진행 중 · MVP 미출시</span>
+          </div>
+
+          <ul class="space-y-1.5 text-sm text-slate-600 list-disc list-outside pl-4 leading-relaxed mb-3">
+            <li><strong class="text-slate-800">AI 개발·검증 분리:</strong> Codex·CodeGraph·Dart MCP·mobile-mcp 기반 문서 주도 구현과 테스트·실기기 검증 세션을 분리 운영합니다.</li>
+            <li><strong class="text-slate-800">권한·업로드:</strong> Firebase Rules·Functions 서버 권한 검증 및 비공개 R2 업로드용 Drift 영속 대기열·멱등 재처리를 구현했습니다.</li>
+            <li><strong class="text-slate-800">네이티브 위젯·테스트:</strong> WidgetKit·Glance 연동 및 One UI 콜라주 오류 수정, Emulator·단위·위젯 테스트 수행(실기기 일부 검증 중).</li>
+          </ul>
+
+          <a href="https://github.com/tngudzzz/hal-me" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-teal-600 hover:text-teal-700">
+            Hal-Me 저장소 및 상세 보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- 일정관리 앱 -->
+        <div class="p-5 rounded-xl border border-slate-200/90 bg-white">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <div>
+              <h3 class="text-base font-bold text-slate-900 inline">일정관리 앱</h3>
+              <span class="text-sm font-medium text-slate-500">· 로컬 저장과 스토어 출시</span>
+            </div>
+            <span class="text-xs text-slate-400 font-medium">2023.02 — 2023.03</span>
+          </div>
+
+          <p class="text-sm text-slate-600 leading-relaxed mb-3">
+            GetX·Hive 기반 앱을 기획·개발하고 Fastlane으로 배포했습니다. Android·iOS 스토어 출시를 단독 수행했으며 현재 스토어 노출은 종료되었습니다.
+          </p>
+
+          <a href="https://app.notion.com/p/Cross-Platform-Engineer-Flutter-ee14ec2a43094b5e84b648c13ca01d8d?source=copy_link" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-teal-600 hover:text-teal-700">
+            일정관리 상세 보기 (Notion) <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 활동 및 학력 (Activities & Education) -->
+    <section>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-1.5 h-5 bg-teal-500 rounded-full"></div>
+        <h2 class="text-xl font-bold text-slate-900">활동 및 학력</h2>
+      </div>
+
+      <div class="space-y-4 text-sm">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 pb-3 border-b border-slate-100">
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-bold text-slate-900">GDG in Songdo</h3>
+              <a href="https://app.notion.com/p/Cross-Platform-Engineer-Flutter-ee14ec2a43094b5e84b648c13ca01d8d?source=copy_link" target="_blank" class="text-xs text-teal-600 hover:underline">상세</a>
+            </div>
+            <p class="text-slate-600 text-xs sm:text-sm mt-0.5">6주 팀 프로젝트에서 인증·북마크·키워드 API 연동과 로그인·마이페이지·WebView UI 담당</p>
+          </div>
+          <span class="text-xs text-slate-400 whitespace-nowrap">2022.12.17 — 2023.01.28</span>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+          <div>
+            <h3 class="font-bold text-slate-900">한신대학교 정보통신학부</h3>
+            <p class="text-slate-500 text-xs mt-0.5">현 소프트웨어융합학부</p>
+          </div>
+          <span class="text-xs text-slate-400 whitespace-nowrap">2014.03 — 2020.02</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-12 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
+      <p>최수형 · Flutter 앱 개발자</p>
+      <p>© 2026 Choi Su-hyeong. All rights reserved.</p>
+    </footer>
+
+  </main>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
