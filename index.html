@@ -141,10 +141,10 @@
               홈별 콘텐츠 처리 공통화와 장보기 단일 홈 전환 수행. 고객센터의 회원 정보·인증·접속일 조회와 푸시 대상 추출·발송을 운영자가 직접 처리하도록 운영 도구 구축.
             </li>
             <li>
-              DTO·Mapper 분리, 섹션 단위 파싱 오류 격리, 15개 화면 딥 링크 통합, 15개 의존성 수동 검증 화면·SDK 스모크 테스트 및 Sentry 오류 추적 적용.
+              홈 콘텐츠 공통화·오류 격리, 15개 화면의 딥 링크 통합, SDK 호환성 검증과 Sentry 오류 추적 적용.
             </li>
             <li>
-              Flutter 장바구니 개발에서 쿠폰·배송비·주문 전 검증, 선택 유지·수량 변경 실패 복구의 단위·위젯 테스트 추가. 해당 장바구니는 개발·검증 중이며 운영 미배포.
+              Flutter 장바구니의 주문 조건 검증·선택 유지·수량 변경 실패 복구를 구현하고 단위·위젯 테스트 추가. 해당 장바구니는 개발·검증 중이며 운영 미배포.
             </li>
           </ul>
         </div>
@@ -181,7 +181,7 @@
           <ul class="space-y-1.5 text-sm text-slate-600 list-disc list-outside pl-4 leading-relaxed mb-3">
             <li>타겟 발송 어드민을 제안하고 기획·Flutter Web·PHP API·배포까지 단독 구축.</li>
             <li>운영자의 직접 조회·발송으로 개발팀 식별자 추출 요청을 해소하고, 발송 절차를 <strong class="text-teal-700 font-semibold">3단계(문서 결재·개발팀 추출·FingerPush)에서 2단계(문서 결재·푸시 보드)</strong>로 전환.</li>
-            <li>대량 CSV 청크 처리·500건 배치 전송·단계별 부분 실패 구분·30분 TTL 중복 요청 제한 구현.</li>
+            <li>대량 파일 분할 처리로 화면 멈춤을 줄이고, 발송 단계별 결과 구분·중복 요청 제한·서버 검증 적용.</li>
             <li><strong class="text-slate-800">운영 규모:</strong> <strong>월 약 700만 건</strong>(2026.10 확인).</li>
           </ul>
 
@@ -211,7 +211,7 @@
 
           <ul class="space-y-1.5 text-sm text-slate-600 list-disc list-outside pl-4 leading-relaxed mb-3">
             <li>Backend와 협업하며 Flutter 구조 설계·개발 주도. 당시 3개 홈(포털·장보기·케어)과 컬렉션의 14개 콘텐츠 타입을 공통 구조로 통합.</li>
-            <li>응답 변환(Mapper)·위젯 빌더를 분리하고 <strong class="text-slate-800">섹션 단위 파싱 오류를 격리</strong>해, 일부 데이터 오류 시에도 정상 섹션을 표시.</li>
+            <li>데이터 변환과 화면 표시 역할을 분리하고, <strong class="text-slate-800">일부 섹션 오류 시에도 정상 콘텐츠를 표시</strong>하도록 구성.</li>
             <li>기존 콘텐츠 타입의 순서·구성·배경색을 앱 재배포 없이 서버 응답으로 조정하도록 구현.</li>
             <li><strong class="text-slate-800">2026.10 장보기 단일 홈으로 전환</strong>하고, 기존 케어·포털 링크는 메인 홈으로 연결되도록 호환 경로 유지.</li>
           </ul>
@@ -329,10 +329,10 @@
               <strong class="text-slate-800">장보기·주문 내역:</strong> 상품 탐색·상세·담기의 Flutter 전환과 전체 화면 새로고침 없는 상품 상태 동기화, 주문·다중 배송 조회·취소 구현. 상품 약 5천 개(2026.08 기준)·장보기 일 이용 약 2만 명(2026.10 확인).
             </li>
             <li>
-              <strong class="text-slate-800">장바구니 · 개발·검증 중, 운영 미배포:</strong> 배송 유형별 선택·배송지·공급일·쿠폰·사은품·배송비·최소 주문금액 검증 구현. 연속 수량 변경의 배치 전송·실패 시 마지막 저장값 복구 및 관련 단위·위젯 테스트 추가. <strong class="text-slate-800">운영 장바구니·주문서·결제는 웹 사용.</strong>
+              <strong class="text-slate-800">장바구니 · 개발·검증 중, 운영 미배포:</strong> 배송·쿠폰·배송비 등 주문 조건 검증, 상품 선택 유지·수량 변경 실패 복구 구현과 단위·위젯 테스트 추가. <strong class="text-slate-800">운영 장바구니·주문서·결제는 웹 사용.</strong>
             </li>
             <li>
-              <strong class="text-slate-800">상품 이미지:</strong> 새로고침 시 캐시 버전을 갱신하고 대표 이미지·확대 화면 간 성공 이미지와 캐시 버전을 공유하도록 개선.
+              <strong class="text-slate-800">상품 이미지:</strong> 새로고침과 확대 화면에서 이미지가 일관되게 표시되도록 캐시 처리 개선.
             </li>
           </ul>
         </div>
@@ -399,9 +399,9 @@
           </div>
 
           <ul class="space-y-1.5 text-sm text-slate-600 list-disc list-outside pl-4 leading-relaxed mb-3">
-            <li><strong class="text-slate-800">AI 개발·검증 분리:</strong> Codex 기반 바이브 코딩으로 구현하고 코드 검토·자동 테스트·실기기 검증을 분리해 관리. CodeGraph·Dart MCP·mobile-mcp를 사용하며 정책·설계·완료 여부를 직접 판단.</li>
-            <li><strong class="text-slate-800">권한·업로드:</strong> Firebase Rules·Functions 서버 권한 검증 및 비공개 R2 업로드용 Drift 영속 대기열·멱등 재처리 구현.</li>
-            <li><strong class="text-slate-800">네이티브 위젯·테스트:</strong> WidgetKit·Glance 연동 및 One UI 콜라주 오류 수정, Emulator·단위·위젯 테스트 수행(실기기 일부 검증 중).</li>
+            <li><strong class="text-slate-800">AI 개발·검증 분리:</strong> Codex로 구현하고 코드 검토·자동 테스트·실기기 검증을 분리해 관리. 정책·설계·완료 여부를 직접 판단.</li>
+            <li><strong class="text-slate-800">권한·업로드:</strong> 가족별 접근 권한과 비공개 사진 업로드를 구현하고, 앱 재실행·네트워크 복구 후 업로드를 재처리하도록 구성.</li>
+            <li><strong class="text-slate-800">네이티브 위젯·테스트:</strong> WidgetKit·Glance 기반 사진 위젯 연동과 기기별 표시 오류 수정. 자동 테스트 수행, 실기기 일부 검증 중.</li>
           </ul>
 
           <div class="flex flex-wrap items-center gap-3 pt-2 border-t border-slate-100">
@@ -518,3 +518,4 @@
   </script>
 </body>
 </html>
+
