@@ -160,34 +160,35 @@
 
       <div class="space-y-6">
 
-        <!-- 프로젝트 1: 푸시 보드 -->
+        <!-- 프로젝트 1: 장보기·주문 내역 -->
         <article class="p-5 rounded-xl border border-slate-200/90 hover:border-teal-200 transition-colors bg-white">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
             <div>
-              <h3 class="text-base font-bold text-slate-900 inline">푸시 보드</h3>
-              <span class="text-sm font-medium text-slate-500">· 반복적인 식별자 추출 요청 해소</span>
+              <h3 class="text-base font-bold text-slate-900 inline">장보기·주문 내역</h3>
+              <span class="text-sm font-medium text-slate-500">· 커머스 기능의 단계적 Flutter 전환</span>
             </div>
-            <span class="text-xs text-slate-400 font-medium">2025.08 — 현재 · 조회·추출 운영 / 발송 기능 실무 미사용</span>
+            <span class="text-xs text-slate-400 font-medium">2025.01 - 현재 · 상품·주문 기능 운영 / 장바구니 개발·검증 중</span>
           </div>
 
           <div class="flex flex-wrap gap-1.5 mb-3">
-            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Flutter Web</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Flutter</span>
             <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Riverpod</span>
-            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">PHP</span>
-            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">MySQL</span>
-            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">FingerPush</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Retrofit</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Freezed</span>
           </div>
 
           <ul class="space-y-1.5 text-sm text-slate-600 list-disc list-outside pl-4 leading-relaxed mb-3">
-            <li>운영 도구를 제안하고 기획·Flutter Web·PHP API·배포까지 단독 구축.</li>
-            <li>도입 전 주 2~3회 발생하던 푸시 대상 식별자 추출 요청을 운영자 직접 처리로 전환. 도입 직후부터 현재까지 동일 요청 0건(2026.11 확인).</li>
-            <li><strong class="text-slate-800">운영 상태:</strong> 대상 조회·추출은 실무 사용 중. 일괄 발송 기능은 구현했으나 실무 미사용.</li>
+            <li>Backend와 협업해 상품 탐색·상세·담기·주문 내역을 Flutter로 전환. 전체 새로고침 없이 목록·상세의 담기·수량 상태를 동기화하고 스크롤 유지.</li>
+            <li>필터·정렬 변경 시 이전 응답·중복 상품 혼입을 방지하고, 다중 배송지·운송장 조회와 주문 취소 구현.</li>
+            <li><strong class="text-slate-800">상품 이미지:</strong> 새로고침과 확대 화면에서 이미지가 일관되게 표시되도록 캐시 처리 개선.</li>
+            <li><strong class="text-slate-800">운영 규모:</strong> 상품 약 5천 개(2026.08 기준) · 장보기 일 이용 약 2만 명(2026.10 확인).</li>
+            <li><strong class="text-slate-800">장바구니 · 개발·검증 중, 운영 미배포:</strong> 배송·쿠폰·배송비 등 주문 조건 검증, 선택 유지·연속 수량 변경 배치 전송·실패 복구와 단위·위젯 테스트 추가. <strong class="text-slate-800">운영 장바구니·주문서·결제는 웹 사용.</strong></li>
           </ul>
 
           <div class="pt-2 border-t border-slate-100">
-            <a href="https://windy-pickle-068.notion.site/324ea71eb05880f6b777c582be2837f3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-teal-600 hover:text-teal-700">
-              푸시 보드 상세 보기 (Notion) <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-            </a>
+            <a href="https://windy-pickle-068.notion.site/324ea71eb05880d19e98d74b7de98a7a" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-teal-600 hover:text-teal-700">장보기 상세 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></a>
+            <span class="text-slate-300 mx-2">·</span>
+            <a href="https://windy-pickle-068.notion.site/3c7ea71eb05881e59648fbd212257fe2" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-teal-600 hover:text-teal-700">주문 내역 상세 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></a>
           </div>
         </article>
 
@@ -313,27 +314,48 @@
       </div>
 
       <div class="space-y-4">
-        <!-- 장보기·주문 내역 / 장바구니 / 상품 이미지 -->
+        <!-- 푸시 보드·고객센터 운영 개선 -->
+        <article class="p-4 rounded-xl border border-slate-100 bg-slate-50/50">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <div>
+              <h3 class="text-base font-bold text-slate-900 inline">푸시 보드</h3>
+              <span class="text-sm font-medium text-slate-500">· 반복적인 식별자 추출 요청 해소</span>
+            </div>
+            <span class="text-xs text-slate-400 font-medium">2025.08 — 현재 · 조회·추출 운영 / 발송 기능 실무 미사용</span>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Flutter Web</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-teal-50 text-teal-700">Riverpod</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">PHP</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">MySQL</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">FingerPush</span>
+          </div>
+
+          <ul class="space-y-1.5 text-sm text-slate-600 list-disc list-outside pl-4 leading-relaxed mb-3">
+            <li>운영 도구를 제안하고 기획·Flutter Web·PHP API·배포까지 단독 구축.</li>
+            <li>도입 전 주 2~3회 발생하던 푸시 대상 식별자 추출 요청을 운영자 직접 처리로 전환. 도입 직후부터 현재까지 동일 요청 0건(2026.11 확인).</li>
+            <li><strong class="text-slate-800">운영 상태:</strong> 대상 조회·추출은 실무 사용 중. 일괄 발송 기능은 구현했으나 실무 미사용.</li>
+          </ul>
+
+          <div class="pt-2 border-t border-slate-100">
+            <a href="https://windy-pickle-068.notion.site/324ea71eb05880f6b777c582be2837f3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-teal-600 hover:text-teal-700">
+              푸시 보드 상세 보기 (Notion) <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 고객센터 대시보드 -->
         <div class="p-4 rounded-xl border border-slate-100 bg-slate-50/50">
-          <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-            <h3 class="text-sm font-bold text-slate-900">장보기·주문 내역 및 장바구니</h3>
+          <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1.5">
+            <h3 class="text-sm font-bold text-slate-900">고객센터 대시보드</h3>
             <div class="flex gap-2 text-xs font-medium text-teal-600">
-              <a href="https://app.notion.com/p/324ea71eb05880d19e98d74b7de98a7a" target="_blank" rel="noopener noreferrer" class="hover:underline">장보기 상세</a>
-              <span class="text-slate-300">·</span>
-              <a href="https://app.notion.com/p/3c7ea71eb05881e59648fbd212257fe2" target="_blank" rel="noopener noreferrer" class="hover:underline">주문 내역 상세</a>
+              <a href="https://windy-pickle-068.notion.site/324ea71eb05880dcac23e3ad100280d6" target="_blank" rel="noopener noreferrer" class="hover:underline">대시보드 상세</a>
             </div>
           </div>
-          <ul class="space-y-1.5 text-sm text-slate-600 list-disc list-outside pl-4 leading-relaxed">
-            <li>
-              <strong class="text-slate-800">장보기·주문 내역:</strong> 상품 탐색·상세·담기의 Flutter 전환과 전체 화면 새로고침 없는 상품 상태 동기화, 주문·다중 배송 조회·취소 구현. 상품 약 5천 개(2026.08 기준)·장보기 일 이용 약 2만 명(2026.10 확인).
-            </li>
-            <li>
-              <strong class="text-slate-800">장바구니 · 개발·검증 중, 운영 미배포:</strong> 배송·쿠폰·배송비 등 주문 조건 검증, 상품 선택 유지·수량 변경 실패 복구 구현과 단위·위젯 테스트 추가. <strong class="text-slate-800">운영 장바구니·주문서·결제는 웹 사용.</strong>
-            </li>
-            <li>
-              <strong class="text-slate-800">상품 이미지:</strong> 새로고침과 확대 화면에서 이미지가 일관되게 표시되도록 캐시 처리 개선.
-            </li>
-          </ul>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            회원 정보·인증·접속일·푸시 설정 조회 및 초기화 업무를 운영자가 직접 처리하도록 Flutter Web 운영 도구 구축.
+          </p>
         </div>
 
         <!-- 딥 링크·SDK -->
@@ -364,18 +386,7 @@
           </p>
         </div>
 
-        <!-- 고객센터 대시보드 -->
-        <div class="p-4 rounded-xl border border-slate-100 bg-slate-50/50">
-          <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1.5">
-            <h3 class="text-sm font-bold text-slate-900">고객센터 대시보드</h3>
-            <div class="flex gap-2 text-xs font-medium text-teal-600">
-              <a href="https://windy-pickle-068.notion.site/324ea71eb05880dcac23e3ad100280d6" target="_blank" rel="noopener noreferrer" class="hover:underline">대시보드 상세</a>
-            </div>
-          </div>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            회원 정보·인증·접속일·푸시 설정 조회 및 초기화 업무를 운영자가 직접 처리하도록 Flutter Web 운영 도구 구축.
-          </p>
-        </div>
+        
       </div>
     </section>
 
